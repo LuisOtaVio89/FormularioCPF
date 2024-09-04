@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário de Cadastro SUS</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <section class="questionario">
+        <h1>Formulário SUS</h1>
+        <form id="eventForm">
+            <fieldset>
+                <h2><strong>Informações Pessoais</strong></h2>
+
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" name="nome" placeholder="Digite seu nome" required>
+
+                <label for="snome">Sobrenome:</label>
+                <input type="text" id="snome" name="snome" placeholder="Digite seu sobrenome" required>
+
+                <label for="birthdate">Data de Nascimento:</label>
+                <input type="date" id="birthdate" name="birthdate" required>
+
+                <label for="email">E-mail:</label>
+                <input type="text" id="email" name="email" placeholder="Digite seu e-mail" required>
+
+                <label for="telefone">Telefone:</label>
+                <input type="text" id="telefone" name="usuario_telefone" placeholder="(99) 99999-9999" onfocus="this.placeholder=''" onblur="this.placeholder='(99) 99999-9999'" oninput="this.value = this.value.replace(/(\d{2})(\d{5})(\d{4})/, '($1) $2-$3')" required  required maxlength="14">
+
+                <h2><strong>Endereço</strong></h2>
+
+                <label for="rua">Rua:</label>
+                <input type="text" id="rua" name="rua" placeholder="Digite o nome de sua rua" required>
+
+                <label for="bairro">Bairro:</label>
+                <input type="text" id="bairro" name="bairro" placeholder="Digite o nome de seu bairro" required>
+
+                <label for="num">Número:</label>
+                <input type="number" id="num" name="num" placeholder="N° casa" required>
+
+                <label for="complemento">Complemento:</label>
+                <input type="text" id="comp" name="comp" placeholder="Digite o complemento" required>
+
+            </fieldset>
+                <article>
+                    <p><strong>Qual seu estado?</strong></p>
+                    <select type= "text" id="estado" name="estado" required>
+                        <option value="" disabled selected>Selecione seu estado</option>
+                        <option value="Acre">Acre</option>
+                        <option value="Alagoas">Alagoas</option>
+                        <option value="Amapá">Amapá</option>
+                        <option value="Amazonas">Amazonas</option>
+                        <option value="Bahia">Bahia</option>
+                        <option value="Ceará">Ceará</option>
+                        <option value="Distrito Federal">Distrito Federal</option>
+                        <option value="Espírito Santo">Espírito Santo</option>
+                        <option value="Goiás">Goiás</option>
+                        <option value="Maranhão">Maranhão</option>
+                        <option value="Mato Grosso">Mato Grosso</option>
+                        <option value="Mato Grosso do Sul">Mato Grosso do Sul</option>
+                        <option value="Minas Gerais">Minas Gerais</option>
+                        <option value="Pará">Pará</option>
+                        <option value="Paraíba">Paraíba</option>
+                        <option value="Paraná">Paraná</option>
+                        <option value="Pernambuco">Pernambuco</option>
+                        <option value="Piauí">Piauí</option>
+                        <option value="Rio de Janeiro">Rio de Janeiro</option>
+                        <option value="Rio Grande do Norte">Rio Grande do Norte</option>
+                        <option value="Rio Grande do Sul">Rio Grande do Sul</option>
+                        <option value="Rondônia">Rondônia</option>
+                        <option value="Roraima">Roraima</option>
+                        <option value="Santa Catarina">Santa Catarina</option>
+                        <option value="São Paulo">São Paulo</option>
+                        <option value="Sergipe">Sergipe</option>
+                        <option value="Tocantins">Tocantins</option>
+                    </select>
+                </article>
+
+            <fieldset>
+
+                <h2><strong>Documentação</strong></h2>
+
+                <label for="cpf">CPF:</label>
+                <input type="text" id="cpf" name="cpf" placeholder="000.000.000-00" oninput="this.value = this.value.replace(/(\d{3})(\d{3})(\d{3})(\d{2})/, '$1.$2.$3-$4')" required maxlength="15">
+
+                <label for="rg">RG:</label>
+                <input type="text" id="rg" name="rg" placeholder="00.000.000-0" oninput="this.value = this.value.replace(/(\d{2})(\d{3})(\d{3})(\d{1})/, '$1.$2.$3-$4')" required  required maxlength="12">
+
+                <h2><strong>Sexo:</strong></h2>
+                <section class="radio-group">
+                    <label><input type="radio" name="gen" value="Masculino" required> Masculino</label>
+                    <label><input type="radio" name="gen" value="Feminino" required> Feminino</label>
+                    <label><input type="radio" name="gen" value="Outro" required> Outro</label>
+                </section>
+
+                <h2><strong>Preferências de Atividades:</strong></h2>
+                <section class="checkbox-group">
+                    <label><input type="checkbox" name="ati" value="E-MAIL"> E-MAIL</label>
+                    <label><input type="checkbox" name="ati" value="TELEFONE"> TELEFONE</label>
+                    <label><input type="checkbox" name="ati" value="SMS"> SMS</label>
+                </section>
+
+                <label for="photo">Foto de Perfil:</label>
+                <input type="file" id="photo" name="photo" accept="image/*" required>
+            </fieldset>
+            <button type="submit">Enviar</button>
+        </form>
+        <section id="result"></section>
+    </section>
+    <script src="script.js"></script>
+</body>
+</html>
